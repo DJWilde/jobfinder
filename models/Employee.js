@@ -38,7 +38,6 @@ const EmployeeSchema = mongoose.Schema({
       },
       to: {
         type: Date,
-        required: true,
       },
       duties: {
         type: String,
@@ -68,7 +67,6 @@ const EmployeeSchema = mongoose.Schema({
       },
       to: {
         type: Date,
-        required: true,
       },
       description: {
         type: String,
