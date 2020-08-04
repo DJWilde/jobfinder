@@ -35,6 +35,10 @@ const UserSchema = mongoose.Schema({
     type: Date,
     default: Date.now,
   },
+  isEmployer: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 module.exports = User = mongoose.model("user", UserSchema);

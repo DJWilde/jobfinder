@@ -41,6 +41,14 @@ const OfferSchema = mongoose.Schema({
     type: String,
     required: true,
   },
+  responses: [
+    {
+      response: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "response",
+      },
+    },
+  ],
 });
 
 module.exports = Offer = mongoose.model("offer", OfferSchema);
