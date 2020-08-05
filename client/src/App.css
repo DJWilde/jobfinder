@@ -1,0 +1,78 @@
+/* Pasek nawigacyjny */
+.navbar .nav-item {
+  margin-right: 10px;
+}
+
+.navbar .nav-item .nav-link {
+  color: white;
+}
+
+/* Jumbotron */
+.jumbotron {
+  height: 800px;
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.4),
+      rgba(0, 0, 0, 0.4) 100%
+    ),
+    url("../src/img/application-1883547_1920.jpg");
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  -o-background-size: 100% 100%;
+  background-size: 100% 100%;
+  margin-bottom: 50px;
+}
+
+.featurette {
+  top: 50%;
+}
+
+.featurette .lead {
+  margin-bottom: 1rem;
+}
+
+/* Prezentacja właściwości */
+.featurette-divider {
+  margin: 5rem 0; /* Space out the Bootstrap <hr> more */
+}
+
+/* Thin out the marketing headings */
+.featurette-heading {
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -0.05rem;
+}
+
+/* Zdjęcia */
+.images {
+  margin: 20px;
+}
+
+.jumbotron-elements {
+  text-align: center;
+  color: white;
+}
+
+/* Stopka */
+.page-footer {
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .jumbotron {
+    margin-bottom: 70px;
+  }
+
+  .featurette-heading {
+    text-align: center;
+  }
+
+  .featurette .lead {
+    text-align: center;
+  }
+
+  .page-footer {
+    text-align: center;
+  }
+}
