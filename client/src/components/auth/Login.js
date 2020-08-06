@@ -1,4 +1,5 @@
 import React, { Fragment, useState } from "react";
+import { Link } from "react-router-dom";
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -27,7 +28,7 @@ const Login = () => {
           tego formularza!
         </p>
         <div class="card card-body mt-4 mb-4">
-          <form method="POST">
+          <form method="POST" onSubmit={(e) => onSubmit(e)}>
             <div class="form-group">
               <label>Adres e-mail: </label>
               <input
@@ -51,9 +52,9 @@ const Login = () => {
             <div class="form-group">
               <p>
                 Jesteś pracodawcą a masz już konto?{" "}
-                <a class="card-link" href="#">
+                <Link class="card-link" to="/pracodawcy/logowanie">
                   Zaloguj się na stronie dla pracodawców!
-                </a>
+                </Link>
               </p>
             </div>
             <div class="form-group">

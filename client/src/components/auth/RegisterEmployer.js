@@ -1,14 +1,17 @@
 import React, { Fragment, useState } from "react";
 import { Link } from "react-router-dom";
 
-const Register = () => {
+const RegisterEmployer = () => {
   const [formData, setFormData] = useState({
+    name: "",
+    typeOfCompany: "",
+    nip: "",
     email: "",
     password: "",
     password2: "",
   });
 
-  const { email, password, password2 } = formData;
+  const { name, typeOfCompany, nip, email, password, password2 } = formData;
 
   const onChange = (e) =>
     setFormData({
@@ -24,18 +27,48 @@ const Register = () => {
       console.log(formData);
     }
   };
-
   return (
     <Fragment>
       <div className="mt-4">
-        <h1>Rejestracja</h1>
+        <h1>Rejestracja pracodawcy</h1>
         <p>
-          Jeżeli szukasz swojej wymarzonej pracy, załóż konto już dziś! To takie
-          proste i nic Cię nie kosztuje!
+          Jeżeli szukasz swojego pracownika dopasowanego do Twoich potrzeb,
+          załóż konto już dziś!
         </p>
+
         <div className="card card-body mt-4 mb-4">
           <form method="post" onSubmit={(e) => onSubmit(e)}>
             <div className="form-group">
+              <div className="form-group">
+                <label>Nazwa firmy: </label>
+                <input
+                  className="form-control"
+                  type="text"
+                  name="name"
+                  value={name}
+                  onChange={(e) => onChange(e)}
+                />
+              </div>
+              <div className="form-group">
+                <label>Typ firmy: </label>
+                <input
+                  className="form-control"
+                  type="text"
+                  name="typeOfCompany"
+                  value={typeOfCompany}
+                  onChange={(e) => onChange(e)}
+                />
+              </div>
+              <div className="form-group">
+                <label>NIP: </label>
+                <input
+                  className="form-control"
+                  type="email"
+                  name="nip"
+                  value={nip}
+                  onChange={(e) => onChange(e)}
+                />
+              </div>
               <div className="form-group">
                 <label>Adres e-mail: </label>
                 <input
@@ -55,30 +88,34 @@ const Register = () => {
                 <input
                   className="form-control"
                   type="password"
-                  name="password"
+                  name="haslo"
                   value={password}
                   onChange={(e) => onChange(e)}
                 />
+                <div className="invalid-feedback"></div>
               </div>
               <div className="form-group">
                 <label>Potwierdź hasło: </label>
                 <input
                   className="form-control"
                   type="password"
-                  name="password2"
+                  name="haslo2"
                   value={password2}
                   onChange={(e) => onChange(e)}
                 />
+                <div className="invalid-feedback"></div>
               </div>
-              <div class="form-group">
-                <button type="submit" class="btn btn-primary">
-                  <i class="fas fa-user-plus"></i> Chcę znaleźć pracę!
+              <div className="form-group">
+                <button type="submit" className="btn btn-primary">
+                  <i className="fas fa-user-plus"></i> Chcę znaleźć pracownika!
                 </button>
               </div>
-              Jesteś pracodawcą a nie masz jeszcze konta?{" "}
-              <Link className="card-link" to="/pracodawcy/rejestracja">
-                Załóż konto dla pracodawców!
-              </Link>
+              <p>
+                Jesteś pracownikiem a nie masz jeszcze konta?{" "}
+                <Link className="card-link" to="/rejestracja">
+                  Załóż konto dla użytkowników!
+                </Link>
+              </p>
             </div>
           </form>
         </div>
@@ -87,4 +124,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default RegisterEmployer;

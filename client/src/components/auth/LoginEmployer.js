@@ -1,14 +1,13 @@
 import React, { Fragment, useState } from "react";
 import { Link } from "react-router-dom";
 
-const Register = () => {
+const LoginEmployer = () => {
   const [formData, setFormData] = useState({
     email: "",
     password: "",
-    password2: "",
   });
 
-  const { email, password, password2 } = formData;
+  const { email, password } = formData;
 
   const onChange = (e) =>
     setFormData({
@@ -18,21 +17,17 @@ const Register = () => {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    if (password !== password2) {
-      console.log("Passwords do not match");
-    } else {
-      console.log(formData);
-    }
+    console.log(formData);
   };
-
   return (
     <Fragment>
       <div className="mt-4">
-        <h1>Rejestracja</h1>
+        <h1>Logowanie pracodawcy</h1>
         <p>
-          Jeżeli szukasz swojej wymarzonej pracy, załóż konto już dziś! To takie
-          proste i nic Cię nie kosztuje!
+          Chcesz sprawdzić czy masz już potencjalnych kandydatów? Zaloguj się
+          przy pomocy tego formularza!
         </p>
+
         <div className="card card-body mt-4 mb-4">
           <form method="post" onSubmit={(e) => onSubmit(e)}>
             <div className="form-group">
@@ -45,40 +40,30 @@ const Register = () => {
                   value={email}
                   onChange={(e) => onChange(e)}
                 />
-                <small>
-                  Ta strona używa systemu Gravatar, zatem radzimy użyć adresu z
-                  konta Gravatar, jeśli chcesz mieć swój awatar.
-                </small>
               </div>
               <div className="form-group">
                 <label>Hasło: </label>
                 <input
                   className="form-control"
                   type="password"
-                  name="password"
+                  name="haslo"
                   value={password}
                   onChange={(e) => onChange(e)}
                 />
               </div>
-              <div className="form-group">
-                <label>Potwierdź hasło: </label>
-                <input
-                  className="form-control"
-                  type="password"
-                  name="password2"
-                  value={password2}
-                  onChange={(e) => onChange(e)}
-                />
+              <div class="form-group">
+                <p>
+                  Jesteś pracownikiem a masz już konto?{" "}
+                  <Link class="card-link" to="/logowanie">
+                    Zaloguj się na stronie dla użytkowników!
+                  </Link>
+                </p>
               </div>
               <div class="form-group">
                 <button type="submit" class="btn btn-primary">
-                  <i class="fas fa-user-plus"></i> Chcę znaleźć pracę!
+                  Zaloguj się
                 </button>
               </div>
-              Jesteś pracodawcą a nie masz jeszcze konta?{" "}
-              <Link className="card-link" to="/pracodawcy/rejestracja">
-                Załóż konto dla pracodawców!
-              </Link>
             </div>
           </form>
         </div>
@@ -87,4 +72,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default LoginEmployer;
